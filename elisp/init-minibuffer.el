@@ -17,6 +17,8 @@
 (when (maybe-require-package 'vertico)
   (add-hook 'after-init-hook 'vertico-mode)
 
+  ;; C-c C-c => embark-act
+  ;; C-h     => entering command mode
   (when (maybe-require-package 'embark)
     (with-eval-after-load 'vertico
       (define-key vertico-map (kbd "C-c C-o") 'embark-export)
