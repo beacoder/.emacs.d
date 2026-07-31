@@ -16,6 +16,8 @@
   :config
   (setq gptel-log-level 'info
         gptel-confirm-tool-calls nil
+        ;; increase curl timeout to 10 hours
+        ;; gptel-curl-extra-args '("-y36000")
         gptel-model 'deepseek-v4-flash
         ;; Randomness in response text, 0 to 2
         gptel-temperature 0
@@ -23,7 +25,9 @@
         (gptel-make-deepseek "DeepSeek"
           ;; set stream to nil when using zai-org/GLM-5.2
           :stream t
-          :key ""))
+          :key ""
+          ;; trade tokens for performance
+          :request-params `(:reasoning_effort "max")))
   ;; free 2000 request per-day, each model 500
   (gptel-make-openai "Free"
     :host "api-inference.modelscope.cn"
