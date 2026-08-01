@@ -33,7 +33,7 @@
     :host "api-inference.modelscope.cn"
     :stream t
     :key ""
-    :models '(deepseek-ai/DeepSeek-V3.2
+    :models '(Qwen/Qwen3.5-35B-A3B
               ZhipuAI/GLM-5.2))
   ;; moonshot models require gptel-temperature=1
   (gptel-make-openai "Moonshot"
