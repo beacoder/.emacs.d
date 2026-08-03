@@ -23,7 +23,6 @@
         gptel-temperature 0
         gptel-backend
         (gptel-make-deepseek "DeepSeek"
-          ;; set stream to nil when using zai-org/GLM-5.2
           :stream t
           :key ""
           ;; trade tokens for performance
@@ -42,6 +41,7 @@
     :key ""
     :models '(kimi-k2.6
               kimi-k2.7-code))
+  ;; glm tool_calls require stream to be nil 
   (gptel-make-openai "Z.AI"
     :host "open.bigmodel.cn"
     :endpoint "/api/paas/v4/chat/completions"
@@ -77,6 +77,8 @@
   (gptel-agent-harness-mode 1)
   (gptel-agent-harness-extras--define-agent telegram ("chrome"))
   (gptel-agent-update)
+  (setq gptel-agent-harness-subagent-model "deepseek-v4-flash")   ; cheap model
+  (setq gptel-agent-harness-subagent-backend "DeepSeek")          ; inherit backend
   (add-to-list 'gptel-agent-harness-context-windows '("openai/gpt-oss-120b" . 128000)))
 
 (use-package gptel-cpp-complete
