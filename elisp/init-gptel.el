@@ -78,7 +78,7 @@
   (gptel-agent-harness-extras--define-agent telegram ("chrome"))
   (gptel-agent-update)
   (setq gptel-agent-harness-subagent-model "deepseek-v4-flash")   ; cheap model
-  (setq gptel-agent-harness-subagent-backend "nil")               ; inherit backend
+  (setq gptel-agent-harness-subagent-backend nil)                 ; inherit backend
   (add-to-list 'gptel-agent-harness-context-windows '("openai/gpt-oss-120b" . 128000)))
 
 (use-package gptel-cpp-complete
