@@ -63,13 +63,6 @@
   ;; add project related information into llm context, e.g: coding guideline, etc.
   (require 'gptel-context)
   (gptel-add-file (expand-file-name "~/.emacs.d/contexts"))
-  ;; add task-completion-rules into llm context
-  (gptel-add-file
-   (expand-file-name
-    "rules/task-completion-rules.md"
-    (file-name-directory
-     (or (locate-library "gptel-agent-harness")
-         (error "gptel-agent-harness not found")))))
   (add-to-list 'gptel-agent-dirs "~/.emacs.d/agents")
   (add-to-list 'gptel-agent-skill-dirs "~/.emacs.d/skills")
   (add-to-list 'warning-suppress-types '(gptel))
