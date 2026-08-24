@@ -1,5 +1,7 @@
 # .emacs.d
 
+[![CI](https://github.com/beacoder/.emacs.d/actions/workflows/test.yml/badge.svg)](https://github.com/beacoder/.emacs.d/actions/workflows/test.yml)
+
 A comprehensive Emacs 30.1 configuration focused on C++ development with AI-powered agentic coding and modern tooling.
 
 ## Overview
