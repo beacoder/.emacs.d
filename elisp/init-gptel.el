@@ -57,7 +57,7 @@
 ;; Additional Packages
 ;; ============================================================================
 
-(use-package gptel-agent
+(use-package gptel-agent-harness
   :ensure t
   :config
   ;; add project related information into llm context, e.g: coding guideline, etc.
@@ -69,17 +69,18 @@
     "rules/task-completion-rules.md"
     (file-name-directory
      (or (locate-library "gptel-agent-harness")
-         (error "gptel‑agent‑harness not found")))))
+         (error "gptel-agent-harness not found")))))
   (add-to-list 'gptel-agent-dirs "~/.emacs.d/agents")
   (add-to-list 'gptel-agent-skill-dirs "~/.emacs.d/skills")
   (add-to-list 'warning-suppress-types '(gptel))
   (require 'gptel-agent-harness)
   (gptel-agent-harness-mode 1)
-  (gptel-agent-harness-extras--define-agent telegram ("chrome"))
+  (gptel-agent-harness-agent--define telegram ("chrome"))
   (gptel-agent-update)
   (setq gptel-agent-harness-subagent-model "deepseek-v4-flash")   ; cheap model
-  (setq gptel-agent-harness-subagent-backend nil)                 ; inherit backend
-  (add-to-list 'gptel-agent-harness-context-windows '("openai/gpt-oss-120b" . 128000)))
+  (setq gptel-agent-harness-subagent-backend "DeepSeek")          ; inherit backend
+  (add-to-list 'gptel-agent-harness-context-windows '("openai/gpt-oss-120b" . 128000))
+  (add-to-list 'gptel-agent-harness-context-windows '("Qwen/Qwen3.5-35B-A3B" . 262144)))
 
 (use-package gptel-cpp-complete
   :ensure t
