@@ -66,7 +66,6 @@
   (add-to-list 'gptel-agent-dirs "~/.emacs.d/agents")
   (add-to-list 'gptel-agent-skill-dirs "~/.emacs.d/skills")
   (add-to-list 'warning-suppress-types '(gptel))
-  (require 'gptel-agent-harness)
   (gptel-agent-harness-mode 1)
   (gptel-agent-harness-agent--define telegram ("chrome"))
   (gptel-agent-update)
