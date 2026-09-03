@@ -45,10 +45,10 @@
   (gptel-make-openai "Z.AI"
     :host "open.bigmodel.cn"
     :endpoint "/api/paas/v4/chat/completions"
+    :request-params `(:reasoning_effort "max")
     :stream t
     :key ""
-    :models '(glm-5.2
-              glm-5.1))
+    :models '(glm-5.3-flash))
   (gptel-make-ollama "Ollama"
     :stream t
     :models '(qwen2.5:7b)))
