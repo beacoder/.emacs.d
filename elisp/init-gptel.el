@@ -74,12 +74,12 @@
   (add-to-list 'gptel-agent-harness-context-windows '("openai/gpt-oss-120b" . 128000))
   (add-to-list 'gptel-agent-harness-context-windows '("Qwen/Qwen3.5-35B-A3B" . 262144)))
 
-(use-package gptel-cpp-complete
-  :ensure t
-  :config
-  (when (display-graphic-p)
-    (dolist (c-mode-hook '(c-mode-common-hook c-ts-mode-hook c++-ts-mode-hook))
-      (add-hook c-mode-hook #'gptel-cpp-complete-mode))))
+;; (use-package gptel-cpp-complete
+;;   :ensure t
+;;   :config
+;;   (when (display-graphic-p)
+;;     (dolist (c-mode-hook '(c-mode-common-hook c-ts-mode-hook c++-ts-mode-hook))
+;;       (add-hook c-mode-hook #'gptel-cpp-complete-mode))))
 
 (defun my/gptel-clean-temp-files ()
   "Remove old gptel temp files owned by current user."
