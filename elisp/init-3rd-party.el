@@ -651,7 +651,7 @@
                ;; 5.start telegram_bot with: ~/.emacs.d/extensions/telegram_bot.py
                ;; 6.start gptel-telegram and enable tools from chrome
                ;; 7.start your prompt with chrome so that chrome tools have higher priority
-               ("chrome"  :command "chrome-devtools-mcp" :args ("--stdio"))))
+               ("chrome"  :command "chrome-devtools-mcp" :args ("--browserUrl=http://127.0.0.1:9222" "--proxyServer=http://127.0.0.1:1080" "--no-performance-crux" "--no-usage-statistics"))))
     :config (progn
               (require 'gptel-integrations)
               (require 'mcp-hub))
