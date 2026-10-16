@@ -70,7 +70,7 @@
 ;;            getset                  accessor/mutator
 ;;            cfor                    for (auto it = container.begin(); it != container.end(); ++it) { }
 ;;            rfor                    for (auto var : range) { }
-;;            cout                    std::cout << ... << std::endl;
+;;            println                 std::println("...");
 ;;            doc                     /** @brief ... @author ... */
 ;;            using                   using namespace ...
 ;;            functor                 struct { return_type operator () { } };
@@ -365,11 +365,11 @@
                        "Insert a C++ range based for loop"
                        'c++-tempo-tags)
 
-(tempo-define-template "c++-cout"
-                       '(> "std::cout << \"" ~ "\" << std::endl;" > n>
+(tempo-define-template "c++-println"
+                       '(> "std::println(\"" ~ "\");" > n>
                            )
-                       "cout"
-                       "cout with endl"
+                       "println"
+                       "std::println (C++23)"
                        'c++-tempo-tags)
 
 (tempo-define-template "c++-doxygen-class"
